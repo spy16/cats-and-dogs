@@ -24,3 +24,4 @@ Solution is based on a Convolutional Neural Network.
     * 2D Max pooling layer and a flatten step.
     * 1 Dense hidden layer with 128 units and `ReLU` activation.
     * 1 output with `Sigmoid` activation.
+    * Accuracy Reached: 96.13%
