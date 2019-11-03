@@ -23,5 +23,15 @@ Solution is based on a Convolutional Neural Network.
     * Conv 2D layer with 3x3 kernel size, stride 2 and `ReLU` activation.
     * 2D Max pooling layer and a flatten step.
     * 1 Dense hidden layer with 128 units and `ReLU` activation.
-    * 1 output with `Sigmoid` activation.
+    * 1 output layer of size 1 with `Sigmoid` activation.
     * Accuracy Reached: 76.13%
+
+2. `classifier_v2.py`:
+
+    * Conv 2D layer with 3x3 kernel size, stride 2 and `ReLU` activation.
+    * 2D Max pooling layer and a flatten step.
+    * Conv 2D layer with 3x3 kernel size, stride 2 and `ReLU` activation.
+    * 2D Max pooling layer and a flatten step.
+    * 1 Dense hidden layer with 128 units and `ReLU` activation.
+    * 1 output layer of size 1 with `Sigmoid` activation.
+    * Accuracy Reached: 85.16%

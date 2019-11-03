@@ -17,6 +17,11 @@ def build_classifier(input_shape=(64, 64, 3), optimizer='adam'):
     model.add(Convolution2D(
         32, (3, 3), input_shape=input_shape, activation='relu'))
     model.add(MaxPooling2D())
+    
+    model.add(Convolution2D(
+        32, (3, 3), activation='relu'))
+    model.add(MaxPooling2D())
+    
     model.add(Flatten())
 
     # classifier feed-forward dense layers
@@ -55,4 +60,4 @@ classifier.fit_generator(train_generator,
                          validation_data=test_generator,
                          validation_steps=2000)
 
-save_model(classifier, "models/", "v2")
+save_model(classifier, "models/", "v1")
