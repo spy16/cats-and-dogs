@@ -17,11 +17,11 @@ def build_classifier(input_shape=(64, 64, 3), optimizer='adam'):
     model.add(Convolution2D(
         32, (3, 3), input_shape=input_shape, activation='relu'))
     model.add(MaxPooling2D())
-    
+
     model.add(Convolution2D(
         32, (3, 3), activation='relu'))
     model.add(MaxPooling2D())
-    
+
     model.add(Flatten())
 
     # classifier feed-forward dense layers
@@ -42,22 +42,22 @@ train_datagen = ImageDataGenerator(
 test_datagen = ImageDataGenerator(rescale=1. / 255)
 
 train_generator = train_datagen.flow_from_directory(
-    "./cats_and_dogs/training_set",
+    "./data/training_set",
     target_size=(64, 64),
     batch_size=32,
     class_mode='binary')
 
 test_generator = test_datagen.flow_from_directory(
-    "./cats_and_dogs/test_set",
+    "./data/test_set",
     target_size=(64, 64),
     batch_size=32,
     class_mode='binary')
 
 classifier = build_classifier()
 classifier.fit_generator(train_generator,
-                         steps_per_epoch=8000,
-                         epochs=25,
+                         steps_per_epoch=4000,
+                         epochs=10,
                          validation_data=test_generator,
-                         validation_steps=2000)
+                         validation_steps=1000)
 
 save_model(classifier, "models/", "v1")
